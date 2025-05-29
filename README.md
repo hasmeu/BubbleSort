@@ -1,40 +1,31 @@
-## 📘 Overview
+# Bubble Sort Analysis 
 
-I chose Bubble Sort after asking my computer science roommate which algorithm to study—he suggested Bubble Sort!
+## Project Overview
+I chose to study the bubble sort algorithm in an unconventional way—by asking my computer science roommate for a recommendation, and he suggested bubble sort! This project implements and analyzes bubble sort, including performance metrics and visualizations.
 
-I wrote a simple Python program that lets users sort lists of different sizes. It tracks:
+## Implementation Details
+I built a simple bubble sort implementation in Python, testing it with various input sizes and enabling user input to adjust the list size. The program tracks:
+- Execution time
+- Number of comparisons
+- Number of swaps
 
-- Time taken  
-- Number of comparisons  
-- Number of swaps  
+To enhance the project, I created visualizations using Claude and Matplotlib to display a graph of the algorithm's progress. The graph updates automatically with each swap, refreshing and plotting the state before and after. To make the visualization viewable, I used `time.sleep` to slow down the rendering. Additionally, I developed:
+- A manually controlled version for step-by-step viewing
+- A text-based version that does not rely on Matplotlib
 
----
+## Bubble Sort Overview
+Bubble sort is a straightforward sorting algorithm that repeatedly iterates through a list, compares adjacent elements, and swaps them if they are in the wrong order. The process continues until no swaps are needed, indicating the list is sorted. The algorithm gets its name because smaller elements "bubble" to the top (beginning) of the list with each iteration.
 
-## 🛠️ Features
+### Time Complexity
+- **Worst Case**: O(n²)  
+  The outer loop runs n-1 times, and the inner loop performs one fewer comparison each pass. The total number of comparisons is calculated as:  
+  \[(n-1) + (n-2) + (n-3) + \dots + 2 + 1 = \sum_{i=1}^{n-1} i = \frac{(n-1)n}{2}\]  
+  This simplifies to \((n^2 - n)/2\), confirming the worst-case time complexity of O(n²).
+- **Best Case**: O(n)  
+  When the list is already sorted and a swap-check is implemented, the algorithm can terminate early, resulting in a linear time complexity.
 
-- User input to set list size  
-- Performance tracking (time, comparisons, swaps)  
-- Real-time graph using `matplotlib`  
-- Slows down to show each swap using `time.sleep`  
-- Manual step-through version  
-- Text-only version (no graphics)
+### Characteristics
+While bubble sort is simple to understand and implement, its O(n²) time complexity makes it inefficient for large datasets compared to advanced algorithms like quicksort or mergesort. However, its simplicity makes it valuable for educational purposes and small datasets.
 
----
-
-## 🔄 How Bubble Sort Works
-
-Bubble Sort goes through a list, compares each pair of items, and swaps them if they are out of order. This repeats until the list is sorted. Smaller values “bubble” to the top.
-
----
-
-## ⏱️ Time Complexity
-
-- **Worst case:** O(n²) – when the list is in reverse order  
-- **Best case:** O(n) – when the list is already sorted  
-- **Space complexity:** O(1) – uses no extra memory
-
----
-
-## ✅ Conclusion
-
-Bubble Sort is a simple algorithm and great for learning. It’s not efficient for large lists, but it helped me understand how sorting works and how to visualize it using code.
+## Conclusion
+Bubble sort is an excellent learning tool due to its straightforward logic, but its inefficiency for large lists—except in the best-case scenario—limits its practical use compared to more efficient sorting algorithms.
